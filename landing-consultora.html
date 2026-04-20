@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexus Consultores — Estrategia que transforma negocios</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#07070f;--surface:#0e0e1c;--purple:#6c3fff;--purple2:#9b6fff;--pink:#ff3b8b;--text:#f0f0ff;--muted:#7070a0;--border:rgba(108,63,255,0.15);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;}
+  a{text-decoration:none;color:inherit;}
+  /* NAV */
+  nav{position:fixed;top:1.5rem;left:50%;transform:translateX(-50%);width:calc(100% - 4rem);max-width:1100px;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.75rem;background:rgba(14,14,28,0.85);backdrop-filter:blur(20px);border-radius:16px;border:1px solid var(--border);z-index:100;}
+  .logo{font-weight:700;font-size:1.15rem;letter-spacing:-0.02em;}
+  .logo span{background:linear-gradient(90deg,var(--purple2),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .nav-links{display:flex;gap:2rem;list-style:none;}
+  .nav-links a{font-size:0.85rem;color:var(--muted);transition:color 0.2s;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-cta{background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff;padding:0.55rem 1.4rem;border-radius:10px;font-size:0.85rem;font-weight:600;transition:opacity 0.2s;}
+  .nav-cta:hover{opacity:0.85;}
+  /* HERO */
+  .hero{min-height:100vh;display:flex;align-items:center;padding:8rem 8% 5rem;position:relative;overflow:hidden;}
+  .hero-particles{position:absolute;inset:0;pointer-events:none;}
+  .particle{position:absolute;border-radius:50%;}
+  .p1{width:500px;height:500px;background:rgba(108,63,255,0.12);filter:blur(100px);top:-100px;left:-100px;}
+  .p2{width:400px;height:400px;background:rgba(255,59,139,0.08);filter:blur(80px);bottom:-50px;right:-50px;}
+  .p3{width:200px;height:200px;background:rgba(108,63,255,0.15);filter:blur(60px);top:30%;left:45%;}
+  .hero-content{position:relative;z-index:1;max-width:750px;}
+  .hero-chip{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(108,63,255,0.12);border:1px solid rgba(108,63,255,0.25);border-radius:100px;padding:0.4rem 1rem;font-size:0.78rem;color:var(--purple2);font-weight:500;margin-bottom:2rem;letter-spacing:0.04em;}
+  .hero h1{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:700;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.75rem;}
+  .hero h1 .line-accent{background:linear-gradient(90deg,var(--purple2),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .hero p{color:var(--muted);font-size:1.05rem;max-width:520px;line-height:1.8;margin-bottom:2.5rem;font-weight:300;}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+  .btn-grad{background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff;padding:1rem 2.2rem;border-radius:12px;font-weight:600;font-size:0.95rem;transition:transform 0.2s,box-shadow 0.2s;}
+  .btn-grad:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(108,63,255,0.35);}
+  .btn-ghost{border:1px solid rgba(255,255,255,0.12);color:var(--text);padding:1rem 2.2rem;border-radius:12px;font-weight:600;font-size:0.95rem;transition:border-color 0.2s,background 0.2s;}
+  .btn-ghost:hover{border-color:var(--purple);background:rgba(108,63,255,0.06);}
+  .hero-logos{margin-top:4rem;}
+  .logos-label{font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+  .logos-row{display:flex;gap:2.5rem;align-items:center;flex-wrap:wrap;}
+  .logo-pill{padding:0.6rem 1.5rem;border:1px solid rgba(255,255,255,0.08);border-radius:100px;font-size:0.85rem;color:rgba(255,255,255,0.35);font-weight:600;letter-spacing:0.04em;}
+  /* SECTIONS */
+  section{padding:6rem 8%;}
+  .s-chip{display:inline-block;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--purple2);font-weight:600;margin-bottom:0.75rem;}
+  .s-title{font-size:clamp(2rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin-bottom:1rem;}
+  .s-p{color:var(--muted);font-size:0.97rem;line-height:1.85;max-width:520px;font-weight:300;margin-bottom:3rem;}
+  /* SERVICES */
+  #servicios{background:var(--surface);}
+  .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+  .svc-card{padding:2rem;border-radius:20px;border:1px solid var(--border);background:var(--bg);transition:border-color 0.3s,transform 0.3s;}
+  .svc-card:hover{border-color:rgba(108,63,255,0.4);transform:translateY(-4px);}
+  .svc-num{font-size:0.72rem;letter-spacing:0.15em;color:var(--muted);margin-bottom:1rem;font-weight:600;}
+  .svc-card h3{font-size:1.1rem;font-weight:700;margin-bottom:0.6rem;letter-spacing:-0.01em;}
+  .svc-card p{font-size:0.87rem;color:var(--muted);line-height:1.75;}
+  .svc-card ul{list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:0.4rem;}
+  .svc-card ul li{font-size:0.83rem;color:var(--muted);display:flex;align-items:center;gap:0.5rem;}
+  .svc-card ul li::before{content:'✓';color:var(--purple2);font-weight:700;}
+  /* PROCESS */
+  .process-timeline{display:flex;flex-direction:column;gap:0;position:relative;}
+  .process-timeline::before{content:'';position:absolute;left:2rem;top:2rem;bottom:2rem;width:1px;background:var(--border);}
+  .p-step{display:grid;grid-template-columns:5rem 1fr;gap:2rem;padding:2rem 0;position:relative;}
+  .p-step-num{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--purple),var(--pink));display:flex;align-items:center;justify-content:center;font-size:0.82rem;font-weight:700;z-index:1;flex-shrink:0;}
+  .p-step-body h3{font-size:1.05rem;font-weight:700;margin-bottom:0.4rem;letter-spacing:-0.01em;}
+  .p-step-body p{font-size:0.87rem;color:var(--muted);line-height:1.75;}
+  .p-step-time{display:inline-block;margin-top:0.75rem;font-size:0.75rem;color:var(--purple2);font-weight:600;letter-spacing:0.08em;}
+  /* RESULTS */
+  #resultados{background:var(--surface);}
+  .results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:4rem;}
+  .result-card{text-align:center;padding:2rem 1.5rem;border:1px solid var(--border);border-radius:20px;background:var(--bg);}
+  .result-num{font-size:2.8rem;font-weight:700;letter-spacing:-0.03em;background:linear-gradient(90deg,var(--purple2),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .result-label{font-size:0.82rem;color:var(--muted);margin-top:0.25rem;}
+  .testimonials-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;}
+  .testi{background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:1.75rem;}
+  .stars{color:#ffcc44;font-size:0.85rem;margin-bottom:1rem;}
+  .testi p{font-size:0.9rem;color:var(--muted);line-height:1.75;font-style:italic;}
+  .testi-author{display:flex;align-items:center;gap:0.75rem;margin-top:1.25rem;}
+  .t-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink));display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;}
+  .t-name{font-size:0.88rem;font-weight:600;}
+  .t-role{font-size:0.78rem;color:var(--muted);}
+  /* CTA SECTION */
+  #consulta{background:var(--bg);}
+  .cta-wrap{background:linear-gradient(135deg,rgba(108,63,255,0.1),rgba(255,59,139,0.06));border:1px solid var(--border);border-radius:24px;padding:4rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+  @media(max-width:768px){.cta-wrap,.process-timeline::before{display:block;}.cta-wrap{padding:2rem;}.p-step{grid-template-columns:4rem 1fr;}.process-timeline::before{display:none;}.nav-links{display:none;}}
+  .cta-form{display:flex;flex-direction:column;gap:1rem;}
+  .f-g{display:flex;flex-direction:column;gap:0.4rem;}
+  .f-g label{font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+  .f-g input,.f-g select,.f-g textarea{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.85rem 1rem;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:0.93rem;outline:none;transition:border-color 0.2s;}
+  .f-g input:focus,.f-g select:focus{border-color:var(--purple);}
+  .f-g select option{background:var(--surface);}
+  .f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .cta-btn{background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff;border:none;border-radius:12px;padding:1rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:0.95rem;cursor:pointer;transition:opacity 0.2s,transform 0.2s;margin-top:0.25rem;}
+  .cta-btn:hover{opacity:0.88;transform:translateY(-1px);}
+  .cta-info h2{font-size:2.2rem;font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:1rem;}
+  .cta-info p{color:var(--muted);font-size:0.95rem;line-height:1.8;margin-bottom:2rem;font-weight:300;}
+  .guarantees{display:flex;flex-direction:column;gap:0.75rem;}
+  .guarantee{display:flex;align-items:center;gap:0.75rem;font-size:0.87rem;color:var(--muted);}
+  .g-check{width:22px;height:22px;border-radius:6px;background:rgba(108,63,255,0.15);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:var(--purple2);flex-shrink:0;}
+  /* FOOTER */
+  footer{padding:2rem 8%;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+  footer p{font-size:0.82rem;color:var(--muted);}
+  .f-logo-text{font-weight:700;font-size:1.05rem;}
+  .f-logo-text span{background:linear-gradient(90deg,var(--purple2),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Nexus<span> Consultores</span></div>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#resultados">Resultados</a></li>
+  </ul>
+  <a href="#consulta" class="nav-cta">Consulta Gratuita</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-particles">
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-chip">🚀 Consultoría estratégica para negocios</div>
+    <h1>Llevamos tu empresa<br>al <span class="line-accent">siguiente nivel</span></h1>
+    <p>Estrategia, marketing digital y optimización de procesos para negocios que quieren escalar. Resultados medibles en 90 días o te devolvemos tu inversión.</p>
+    <div class="hero-actions">
+      <a href="#consulta" class="btn-grad">Consulta Gratuita →</a>
+      <a href="#resultados" class="btn-ghost">Ver Resultados</a>
+    </div>
+    <div class="hero-logos">
+      <div class="logos-label">Empresas que confiaron en nosotros</div>
+      <div class="logos-row">
+        <div class="logo-pill">TechCorp</div>
+        <div class="logo-pill">MegaVentas</div>
+        <div class="logo-pill">FuturaMed</div>
+        <div class="logo-pill">ServiPlus</div>
+        <div class="logo-pill">ConstruMax</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="s-chip">/ Nuestros Servicios</div>
+  <h2 class="s-title">Soluciones que<br>mueven la aguja</h2>
+  <p class="s-p">Trabajamos con negocios pequeños y medianos que quieren crecer de forma inteligente y sostenible.</p>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-num">01 / Estrategia</div>
+      <h3>Plan de Negocio</h3>
+      <p>Analizamos tu situación actual y construimos una hoja de ruta clara para alcanzar tus objetivos.</p>
+      <ul><li>Análisis de mercado</li><li>Identificación de oportunidades</li><li>Plan de acción 90 días</li></ul>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">02 / Digital</div>
+      <h3>Marketing Digital</h3>
+      <p>Presencia online que atrae y convierte. Desde redes sociales hasta campañas de publicidad pagada.</p>
+      <ul><li>Estrategia en redes sociales</li><li>Campañas Google y Meta Ads</li><li>SEO y contenido</li></ul>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">03 / Operaciones</div>
+      <h3>Optimización de Procesos</h3>
+      <p>Identificamos cuellos de botella y automatizamos procesos para que tu empresa opere mejor.</p>
+      <ul><li>Mapeo de procesos</li><li>Automatización y herramientas</li><li>KPIs y seguimiento</li></ul>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">04 / Ventas</div>
+      <h3>Sistema de Ventas</h3>
+      <p>Construimos un pipeline de ventas predecible y escalable adaptado a tu tipo de negocio.</p>
+      <ul><li>Embudo de conversión</li><li>Scripts y procesos de venta</li><li>CRM y seguimiento</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="proceso">
+  <div class="s-chip">/ Cómo Trabajamos</div>
+  <h2 class="s-title">Resultados en<br>90 días</h2>
+  <div class="process-timeline">
+    <div class="p-step">
+      <div class="p-step-num">01</div>
+      <div class="p-step-body">
+        <h3>Diagnóstico Gratuito</h3>
+        <p>Una llamada de 45 minutos para entender tu negocio, tus metas y los principales obstáculos que enfrentas.</p>
+        <span class="p-step-time">Semana 1</span>
+      </div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num">02</div>
+      <div class="p-step-body">
+        <h3>Propuesta Estratégica</h3>
+        <p>Elaboramos un plan personalizado con objetivos claros, métricas de éxito y cronograma de ejecución.</p>
+        <span class="p-step-time">Semana 1-2</span>
+      </div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num">03</div>
+      <div class="p-step-body">
+        <h3>Implementación</h3>
+        <p>Ejecutamos el plan junto a tu equipo. Nos integramos como parte de tu empresa para garantizar resultados.</p>
+        <span class="p-step-time">Semana 2-10</span>
+      </div>
+    </div>
+    <div class="p-step">
+      <div class="p-step-num">04</div>
+      <div class="p-step-body">
+        <h3>Medición y Ajuste</h3>
+        <p>Seguimiento semanal de métricas y ajustes continuos para optimizar los resultados en tiempo real.</p>
+        <span class="p-step-time">Semana 4-12</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resultados">
+  <div class="s-chip">/ Resultados Reales</div>
+  <h2 class="s-title">Los números<br>no mienten</h2>
+  <div class="results-grid">
+    <div class="result-card"><div class="result-num">+180%</div><div class="result-label">Crecimiento en ventas promedio</div></div>
+    <div class="result-card"><div class="result-num">87</div><div class="result-label">Empresas asesoradas exitosamente</div></div>
+    <div class="result-card"><div class="result-num">90d</div><div class="result-label">Tiempo promedio para ver resultados</div></div>
+    <div class="result-card"><div class="result-num">4.9★</div><div class="result-label">Calificación promedio de clientes</div></div>
+  </div>
+  <div class="testimonials-row">
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>En 3 meses triplicamos nuestras ventas online. Nexus nos ayudó a estructurar un sistema de ventas que antes no teníamos. La mejor inversión que hemos hecho.</p>
+      <div class="testi-author"><div class="t-avatar">LP</div><div><div class="t-name">Luis Pérez</div><div class="t-role">CEO, TechCorp Solutions</div></div></div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>Llevábamos años sin crecer. El diagnóstico que hicieron reveló problemas que nosotros no veíamos. Hoy somos un equipo más eficiente y rentable.</p>
+      <div class="testi-author"><div class="t-avatar">AG</div><div><div class="t-name">Ana González</div><div class="t-role">Directora, ServiPlus</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="consulta">
+  <div class="cta-wrap">
+    <div class="cta-info">
+      <h2>Consulta estratégica gratuita</h2>
+      <p>45 minutos con uno de nuestros consultores senior. Sin compromiso. Sin ventas agresivas. Solo un análisis honesto de cómo podemos ayudarte.</p>
+      <div class="guarantees">
+        <div class="guarantee"><div class="g-check">✓</div>Sin costo ni compromiso</div>
+        <div class="guarantee"><div class="g-check">✓</div>Respuesta en menos de 24 horas</div>
+        <div class="guarantee"><div class="g-check">✓</div>Propuesta personalizada incluida</div>
+        <div class="guarantee"><div class="g-check">✓</div>Garantía de resultados en 90 días</div>
+      </div>
+    </div>
+    <form class="cta-form" onsubmit="sendForm(event)">
+      <div class="f-row">
+        <div class="f-g"><label>Nombre</label><input type="text" placeholder="Tu nombre" required></div>
+        <div class="f-g"><label>Empresa</label><input type="text" placeholder="Nombre de tu empresa"></div>
+      </div>
+      <div class="f-row">
+        <div class="f-g"><label>Email</label><input type="email" placeholder="tu@empresa.com" required></div>
+        <div class="f-g"><label>WhatsApp</label><input type="tel" placeholder="+58 412 ..."></div>
+      </div>
+      <div class="f-g"><label>Facturación mensual aproximada</label>
+        <select><option>Menos de $5,000/mes</option><option>$5,000 - $15,000/mes</option><option>$15,000 - $50,000/mes</option><option>Más de $50,000/mes</option></select>
+      </div>
+      <div class="f-g"><label>Principal desafío de tu negocio</label>
+        <select><option>Conseguir más clientes</option><option>Aumentar ticket promedio</option><option>Mejorar procesos y eficiencia</option><option>Escalar sin perder calidad</option><option>Otro</option></select>
+      </div>
+      <button type="submit" class="cta-btn">Agendar Consulta Gratuita →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo-text">Nexus<span> Consultores</span></div>
+  <p>© 2025 Nexus Consultores · Caracas, Venezuela · Transformando negocios desde 2018</p>
+  <p style="color:var(--purple2);">nexus@nexusconsultores.com</p>
+</footer>
+
+<script>
+function sendForm(e){e.preventDefault();const btn=e.target.querySelector('button');btn.textContent='¡Consulta Agendada! ✓';btn.style.background='linear-gradient(135deg,#00a878,#00e5b0)';setTimeout(()=>{btn.textContent='Agendar Consulta Gratuita →';btn.style.background='';e.target.reset();},3000);}
+</script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premier Inmobiliaria — Tu hogar perfecto te espera</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f8f7f5;--surface:#fff;--navy:#0f1b3d;--navy2:#1c2f5e;--gold:#b8962e;--gold-light:#d4af50;--text:#1a1a2e;--muted:#6b7280;--border:#e5e0d8;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;}
+  a{text-decoration:none;color:inherit;}
+  nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 6%;background:rgba(15,27,61,0.97);backdrop-filter:blur(8px);z-index:100;}
+  .logo{display:flex;align-items:center;gap:0.5rem;}
+  .logo-mark{width:32px;height:32px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1rem;}
+  .logo-text{font-family:'Libre Baskerville',serif;font-size:1.1rem;color:#fff;font-weight:700;letter-spacing:0.02em;}
+  .logo-text span{color:var(--gold-light);}
+  .nav-links{display:flex;gap:2rem;list-style:none;}
+  .nav-links a{font-size:0.85rem;color:rgba(255,255,255,0.6);transition:color 0.2s;}
+  .nav-links a:hover{color:#fff;}
+  .nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);padding:0.55rem 1.5rem;border-radius:6px;font-size:0.85rem;font-weight:600;transition:opacity 0.2s;}
+  .nav-cta:hover{opacity:0.88;}
+  /* HERO */
+  .hero{min-height:100vh;background:var(--navy);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:7rem 6% 5rem;}
+  @media(max-width:768px){.hero{grid-template-columns:1fr;}.nav-links{display:none;}.hero-visual{display:none;}}
+  .hero-eyebrow{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.25rem;}
+  .hero h1{font-family:'Libre Baskerville',serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1.15;color:#fff;margin-bottom:1.5rem;}
+  .hero h1 em{color:var(--gold-light);font-style:italic;}
+  .hero p{color:rgba(255,255,255,0.6);font-size:1rem;line-height:1.8;max-width:440px;margin-bottom:2.5rem;font-weight:300;}
+  .search-bar{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1.5rem;}
+  .search-label{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;}
+  .search-inputs{display:grid;grid-template-columns:1fr 1fr auto;gap:0.75rem;align-items:center;}
+  .search-inputs select,.search-inputs input{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:0.7rem 1rem;color:#fff;font-family:'Inter',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s;}
+  .search-inputs select:focus,.search-inputs input:focus{border-color:var(--gold);}
+  .search-inputs select option{background:var(--navy2);}
+  .search-btn{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);border:none;border-radius:8px;padding:0.7rem 1.5rem;font-weight:600;font-size:0.88rem;cursor:pointer;white-space:nowrap;transition:opacity 0.2s;}
+  .search-btn:hover{opacity:0.88;}
+  .hero-badges{display:flex;gap:1.5rem;flex-wrap:wrap;}
+  .h-badge{display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;color:rgba(255,255,255,0.5);}
+  .h-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--gold-light);}
+  .hero-visual{display:flex;align-items:center;justify-content:center;padding-left:3rem;}
+  .prop-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .prop-mini{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;overflow:hidden;transition:border-color 0.2s;}
+  .prop-mini:hover{border-color:rgba(184,150,46,0.4);}
+  .prop-mini:first-child{grid-column:span 2;}
+  .prop-mini-img{height:120px;display:flex;align-items:center;justify-content:center;font-size:3rem;}
+  .prop-mini:first-child .prop-mini-img{height:160px;font-size:4rem;}
+  .prop-mini-info{padding:0.75rem 1rem;}
+  .prop-mini-price{font-family:'Libre Baskerville',serif;color:var(--gold-light);font-size:0.95rem;font-weight:700;}
+  .prop-mini-loc{font-size:0.75rem;color:rgba(255,255,255,0.4);margin-top:0.15rem;}
+  /* SECTIONS */
+  section{padding:6rem 6%;}
+  .s-eyebrow{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;}
+  .s-title{font-family:'Libre Baskerville',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);line-height:1.2;margin-bottom:1rem;color:var(--navy);}
+  .s-p{color:var(--muted);font-size:0.95rem;line-height:1.85;max-width:520px;font-weight:300;margin-bottom:3rem;}
+  /* PROPS */
+  #propiedades{background:var(--bg);}
+  .filter-tabs{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+  .filter-tab{padding:0.5rem 1.25rem;border-radius:100px;border:1px solid var(--border);font-size:0.82rem;cursor:pointer;transition:all 0.2s;background:#fff;}
+  .filter-tab.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .props-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;}
+  .prop-card{background:var(--surface);border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:transform 0.3s,box-shadow 0.3s;}
+  .prop-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(15,27,61,0.1);}
+  .prop-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative;}
+  .prop-tag{position:absolute;top:1rem;left:1rem;background:var(--navy);color:#fff;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.3rem 0.75rem;border-radius:100px;}
+  .prop-body{padding:1.5rem;}
+  .prop-price{font-family:'Libre Baskerville',serif;font-size:1.3rem;color:var(--navy);font-weight:700;margin-bottom:0.4rem;}
+  .prop-price small{font-size:0.8rem;color:var(--muted);font-family:'Inter',sans-serif;font-weight:400;}
+  .prop-name{font-weight:600;font-size:1rem;margin-bottom:0.25rem;}
+  .prop-loc{font-size:0.82rem;color:var(--muted);margin-bottom:1rem;}
+  .prop-specs{display:flex;gap:1.25rem;}
+  .prop-spec{font-size:0.8rem;color:var(--muted);display:flex;align-items:center;gap:0.3rem;}
+  .prop-spec strong{color:var(--text);font-weight:600;}
+  /* WHY US */
+  #nosotros{background:var(--navy);color:#fff;}
+  #nosotros .s-title{color:#fff;}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;}
+  .why-item{padding:2rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;transition:border-color 0.2s;}
+  .why-item:hover{border-color:rgba(184,150,46,0.3);}
+  .why-icon{font-size:2rem;margin-bottom:1rem;}
+  .why-item h3{font-family:'Libre Baskerville',serif;font-size:1.1rem;margin-bottom:0.5rem;color:#fff;}
+  .why-item p{font-size:0.87rem;color:rgba(255,255,255,0.5);line-height:1.75;}
+  /* CONTACT */
+  #contacto{background:var(--bg);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+  @media(max-width:768px){.contact-grid,.props-grid{grid-template-columns:1fr;}.contact-grid{gap:2rem;}}
+  .contact-card{background:var(--surface);border-radius:20px;padding:2.5rem;border:1px solid var(--border);}
+  .agent-header{display:flex;align-items:center;gap:1.25rem;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+  .agent-avatar{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy2));display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;}
+  .agent-name{font-weight:600;font-size:1.05rem;}
+  .agent-title{font-size:0.82rem;color:var(--muted);}
+  .agent-title span{color:var(--gold);}
+  .contact-form{display:flex;flex-direction:column;gap:1rem;}
+  .form-g{display:flex;flex-direction:column;gap:0.4rem;}
+  .form-g label{font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+  .form-g input,.form-g select,.form-g textarea{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:0.8rem 1rem;color:var(--text);font-family:'Inter',sans-serif;font-size:0.93rem;outline:none;transition:border-color 0.2s;}
+  .form-g input:focus,.form-g select:focus{border-color:var(--gold);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .contact-btn{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border:none;border-radius:10px;padding:1rem;font-family:'Inter',sans-serif;font-weight:600;font-size:0.93rem;cursor:pointer;transition:opacity 0.2s;margin-top:0.25rem;}
+  .contact-btn:hover{opacity:0.88;}
+  .contact-info-side{}
+  .info-card{background:var(--surface);border-radius:16px;padding:1.75rem;border:1px solid var(--border);margin-bottom:1rem;}
+  .info-card h3{font-family:'Libre Baskerville',serif;font-size:1.5rem;color:var(--navy);margin-bottom:0.5rem;}
+  .info-card p{font-size:0.88rem;color:var(--muted);line-height:1.75;}
+  .stats-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+  .stat-box{background:var(--bg);border-radius:12px;padding:1.25rem;text-align:center;border:1px solid var(--border);}
+  .stat-box-num{font-family:'Libre Baskerville',serif;font-size:2rem;color:var(--navy);font-weight:700;}
+  .stat-box-label{font-size:0.75rem;color:var(--muted);margin-top:0.2rem;}
+  /* FOOTER */
+  footer{background:var(--navy);color:rgba(255,255,255,0.5);padding:2rem 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+  .f-logo{font-family:'Libre Baskerville',serif;color:#fff;font-size:1.1rem;}
+  .f-logo span{color:var(--gold-light);}
+  footer p{font-size:0.8rem;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-mark">🏠</div>
+    <div class="logo-text">Premier<span> Inmobiliaria</span></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#propiedades">Propiedades</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta">Hablar con Asesor</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Caracas · Venezuela · Desde 2010</div>
+    <h1>Encuentra el hogar de<br>tus <em>sueños</em></h1>
+    <p>Compramos, vendemos y alquilamos propiedades con asesoría personalizada. Más de 15 años conectando personas con sus hogares ideales.</p>
+    <div class="search-bar">
+      <div class="search-label">¿Qué estás buscando?</div>
+      <div class="search-inputs">
+        <select>
+          <option>Comprar</option>
+          <option>Alquilar</option>
+          <option>Vender</option>
+        </select>
+        <select>
+          <option>Zona Este</option>
+          <option>Zona Oeste</option>
+          <option>Chacao</option>
+          <option>Las Mercedes</option>
+          <option>Altamira</option>
+        </select>
+        <button class="search-btn">Buscar</button>
+      </div>
+    </div>
+    <div class="hero-badges">
+      <div class="h-badge"><div class="h-badge-dot"></div>Apartamentos</div>
+      <div class="h-badge"><div class="h-badge-dot"></div>Casas</div>
+      <div class="h-badge"><div class="h-badge-dot"></div>Locales Comerciales</div>
+      <div class="h-badge"><div class="h-badge-dot"></div>Oficinas</div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="prop-cards">
+      <div class="prop-mini">
+        <div class="prop-mini-img" style="background:linear-gradient(135deg,#1c2f5e,#2a4080);">🏢</div>
+        <div class="prop-mini-info"><div class="prop-mini-price">$180,000</div><div class="prop-mini-loc">Altamira · 3 hab</div></div>
+      </div>
+      <div class="prop-mini">
+        <div class="prop-mini-img" style="background:linear-gradient(135deg,#0f1b3d,#1c2f5e);">🏠</div>
+        <div class="prop-mini-info"><div class="prop-mini-price">$95,000</div><div class="prop-mini-loc">El Cafetal · 2 hab</div></div>
+      </div>
+      <div class="prop-mini">
+        <div class="prop-mini-img" style="background:linear-gradient(135deg,#2a1a00,#4d3000);">🏡</div>
+        <div class="prop-mini-info"><div class="prop-mini-price">$320,000</div><div class="prop-mini-loc">La Tahona · 4 hab</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="propiedades">
+  <div class="s-eyebrow">/ Propiedades Destacadas</div>
+  <h2 class="s-title">Las mejores opciones<br>del mercado</h2>
+  <div class="filter-tabs">
+    <div class="filter-tab active">Todas</div>
+    <div class="filter-tab">En Venta</div>
+    <div class="filter-tab">En Alquiler</div>
+    <div class="filter-tab">Apartamentos</div>
+    <div class="filter-tab">Casas</div>
+  </div>
+  <div class="props-grid">
+    <div class="prop-card">
+      <div class="prop-img" style="background:linear-gradient(135deg,#1c2f5e,#2a4080);">🏢<div class="prop-tag">En Venta</div></div>
+      <div class="prop-body">
+        <div class="prop-price">$185,000</div>
+        <div class="prop-name">Apartamento en Altamira</div>
+        <div class="prop-loc">📍 Calle 3, Altamira, Chacao</div>
+        <div class="prop-specs">
+          <div class="prop-spec"><strong>3</strong> hab</div>
+          <div class="prop-spec"><strong>2</strong> baños</div>
+          <div class="prop-spec"><strong>120</strong> m²</div>
+          <div class="prop-spec"><strong>2</strong> puestos</div>
+        </div>
+      </div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-img" style="background:linear-gradient(135deg,#2a1a00,#5a3500);">🏡<div class="prop-tag">En Venta</div></div>
+      <div class="prop-body">
+        <div class="prop-price">$340,000</div>
+        <div class="prop-name">Casa en La Tahona</div>
+        <div class="prop-loc">📍 Urb. La Tahona, Baruta</div>
+        <div class="prop-specs">
+          <div class="prop-spec"><strong>4</strong> hab</div>
+          <div class="prop-spec"><strong>4</strong> baños</div>
+          <div class="prop-spec"><strong>280</strong> m²</div>
+          <div class="prop-spec">Piscina</div>
+        </div>
+      </div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-img" style="background:linear-gradient(135deg,#0a1a0a,#1a3a1a);">🏠<div class="prop-tag">En Alquiler</div></div>
+      <div class="prop-body">
+        <div class="prop-price">$900 <small>/mes</small></div>
+        <div class="prop-name">Apartamento Las Mercedes</div>
+        <div class="prop-loc">📍 Av. Principal, Las Mercedes</div>
+        <div class="prop-specs">
+          <div class="prop-spec"><strong>2</strong> hab</div>
+          <div class="prop-spec"><strong>2</strong> baños</div>
+          <div class="prop-spec"><strong>85</strong> m²</div>
+          <div class="prop-spec">Amoblado</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="s-eyebrow">/ Por qué elegirnos</div>
+  <h2 class="s-title" style="color:#fff;">15 años construyendo<br>confianza</h2>
+  <p class="s-p" style="color:rgba(255,255,255,0.5);margin-bottom:3rem;">Somos la inmobiliaria de confianza en Caracas con el mayor portafolio de propiedades y los mejores asesores del mercado.</p>
+  <div class="why-grid">
+    <div class="why-item"><div class="why-icon">🤝</div><h3>Asesoría Total</h3><p>Te acompañamos en cada paso: búsqueda, negociación, documentación y cierre. Sin complicaciones.</p></div>
+    <div class="why-item"><div class="why-icon">📋</div><h3>Trámites Incluidos</h3><p>Gestionamos todos los trámites legales y documentación. Tú solo te preocupas de elegir tu propiedad.</p></div>
+    <div class="why-item"><div class="why-icon">🔍</div><h3>Mayor Portafolio</h3><p>Más de 200 propiedades disponibles en las mejores zonas de Caracas. Siempre hay algo para ti.</p></div>
+    <div class="why-item"><div class="why-icon">⚡</div><h3>Respuesta Rápida</h3><p>Nuestro equipo de asesores responde en menos de 2 horas. Tu tiempo es valioso para nosotros.</p></div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="contact-grid">
+    <div>
+      <div class="info-card">
+        <h3>¿Buscas o vendes<br>una propiedad?</h3>
+        <p>Habla con nuestros asesores especializados. Te ayudamos a encontrar la mejor opción del mercado al mejor precio.</p>
+        <div class="stats-row">
+          <div class="stat-box"><div class="stat-box-num">15+</div><div class="stat-box-label">Años de experiencia</div></div>
+          <div class="stat-box"><div class="stat-box-num">200+</div><div class="stat-box-label">Propiedades activas</div></div>
+          <div class="stat-box"><div class="stat-box-num">1,200</div><div class="stat-box-label">Negocios cerrados</div></div>
+          <div class="stat-box"><div class="stat-box-num">4.8★</div><div class="stat-box-label">Calificación Google</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-card">
+      <div class="agent-header">
+        <div class="agent-avatar">👨‍💼</div>
+        <div>
+          <div class="agent-name">Roberto Fernández</div>
+          <div class="agent-title">Asesor Senior · <span>Disponible ahora</span></div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="sendContact(event)">
+        <div class="form-row">
+          <div class="form-g"><label>Nombre</label><input type="text" placeholder="Tu nombre" required></div>
+          <div class="form-g"><label>Teléfono</label><input type="tel" placeholder="+58 412 ..."></div>
+        </div>
+        <div class="form-g"><label>¿Qué necesitas?</label>
+          <select><option>Comprar propiedad</option><option>Vender propiedad</option><option>Alquilar</option><option>Asesoría de inversión</option></select>
+        </div>
+        <div class="form-g"><label>Presupuesto / Descripción</label><input type="text" placeholder="Ej: Busco apartamento hasta $150k en Chacao"></div>
+        <button type="submit" class="contact-btn">Hablar con un Asesor →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">Premier<span> Inmobiliaria</span></div>
+  <p>© 2025 Premier Inmobiliaria C.A. · Caracas, Venezuela</p>
+  <p style="color:rgba(255,255,255,0.7);">+58 212 000 0000</p>
+</footer>
+
+<script>
+document.querySelectorAll('.filter-tab').forEach(tab=>{tab.addEventListener('click',()=>{document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');});});
+function sendContact(e){e.preventDefault();const btn=e.target.querySelector('button');btn.textContent='¡Solicitud Enviada! ✓';btn.style.background='linear-gradient(135deg,#00a878,#00e5b0)';setTimeout(()=>{btn.textContent='Hablar con un Asesor →';btn.style.background='';e.target.reset();},3000);}
+</script>
+</body>
+</html>

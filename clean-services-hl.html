@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Clean Services H&L – Limpieza Profesional a Domicilio · Santiago</title>
+<meta name="description" content="Servicio de limpieza profesional a domicilio en Santiago. Tapicería, sofás, alfombras, futones, decapado de pisos e interior de autos. Llámanos al +56 9 6190 3008."/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --b50:#EFF7FF;
+  --b100:#D6ECFF;
+  --b200:#ADD8FF;
+  --b400:#3B9FE8;
+  --b500:#1A7FD4;
+  --b600:#1260A8;
+  --b700:#0A4D8C;
+  --b900:#062D52;
+  --sk50:#F0F9FF;
+  --tc:#2BBFB0;
+  --white:#FFFFFF;
+  --g50:#F8FAFD;
+  --g100:#F1F5FA;
+  --g200:#E2EBF4;
+  --g400:#8FA4BC;
+  --g600:#4A6480;
+  --g800:#1C2B3A;
+  --wa:#25D366;
+  --wa2:#1aad54;
+  --r:8px;--rm:14px;--rl:22px;
+  --sh:0 2px 12px rgba(10,77,140,.07);
+  --shm:0 6px 28px rgba(10,77,140,.13);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--g50);color:var(--g800);line-height:1.7;}
+
+/* ── NAV ─────────────────────────────────────────── */
+nav{
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(14px);
+  border-bottom:1.5px solid var(--b100);
+  position:sticky;top:0;z-index:300;
+  padding:0 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  height:68px;
+  box-shadow:0 2px 10px rgba(10,77,140,.06);
+}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--b500),var(--b700));border-radius:13px;display:flex;align-items:center;justify-content:center;}
+.nav-icon svg{width:24px;height:24px;}
+.nav-name{font-weight:800;font-size:16px;color:var(--b700);line-height:1.1;}
+.nav-name small{display:block;font-weight:600;font-size:11px;color:var(--g400);letter-spacing:.06em;}
+.nav-links{display:flex;gap:26px;align-items:center;}
+.nav-links a{text-decoration:none;font-size:14px;font-weight:700;color:var(--g600);transition:color .2s;}
+.nav-links a:hover{color:var(--b500);}
+.nav-wa{
+  background:var(--wa);color:#fff!important;
+  padding:10px 20px;border-radius:50px;
+  font-weight:800!important;font-size:13px!important;
+  display:flex;align-items:center;gap:7px;
+  transition:background .2s,transform .15s!important;
+  box-shadow:0 3px 12px rgba(37,211,102,.3);
+}
+.nav-wa:hover{background:var(--wa2)!important;transform:scale(1.04)!important;}
+@media(max-width:680px){.nav-links{display:none;}}
+
+/* ── HERO ─────────────────────────────────────────── */
+.hero{
+  background:linear-gradient(140deg,var(--b700) 0%,var(--b500) 50%,#38B6FF 100%);
+  padding:5rem 1.5rem 5.5rem;
+  text-align:center;position:relative;overflow:hidden;
+}
+.hc{position:absolute;border-radius:50%;pointer-events:none;}
+.hc1{width:340px;height:340px;top:-100px;right:-80px;background:rgba(255,255,255,.07);}
+.hc2{width:420px;height:420px;bottom:-130px;left:-120px;background:rgba(255,255,255,.05);}
+.hc3{width:180px;height:180px;top:30%;left:5%;background:rgba(255,255,255,.04);}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);
+  color:#fff;padding:7px 20px;border-radius:50px;
+  font-size:13px;font-weight:700;margin-bottom:2rem;
+  position:relative;z-index:1;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,6vw,58px);
+  color:#fff;line-height:1.15;margin-bottom:1.25rem;
+  position:relative;z-index:1;
+}
+.hero h1 span{color:#B8DEFF;}
+.hero-sub{
+  font-size:18px;color:rgba(255,255,255,.88);
+  max-width:520px;margin:0 auto 2.5rem;
+  position:relative;z-index:1;
+}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+.btn-wa{
+  background:var(--wa);color:#fff;border:none;
+  padding:15px 32px;border-radius:50px;
+  font-size:16px;font-weight:800;font-family:'Nunito',sans-serif;
+  cursor:pointer;display:flex;align-items:center;gap:10px;
+  text-decoration:none;
+  transition:background .2s,transform .15s;
+  box-shadow:0 6px 24px rgba(37,211,102,.38);
+}
+.btn-wa:hover{background:var(--wa2);transform:translateY(-2px);}
+.btn-ghost{
+  background:rgba(255,255,255,.16);color:#fff;
+  border:2px solid rgba(255,255,255,.6);
+  padding:15px 32px;border-radius:50px;
+  font-size:16px;font-weight:800;font-family:'Nunito',sans-serif;
+  cursor:pointer;text-decoration:none;
+  transition:background .2s,transform .15s;
+}
+.btn-ghost:hover{background:rgba(255,255,255,.27);transform:translateY(-2px);}
+.hero-stats{
+  display:flex;justify-content:center;gap:44px;flex-wrap:wrap;
+  margin-top:3.5rem;position:relative;z-index:1;
+}
+.stat{text-align:center;color:#fff;}
+.stat-n{font-size:32px;font-weight:800;line-height:1;}
+.stat-l{font-size:13px;opacity:.78;margin-top:5px;}
+
+/* WAVE */
+.wave{display:block;width:100%;height:55px;margin-bottom:-4px;}
+
+/* ── SECTIONS ─────────────────────────────────────── */
+.sec{padding:4rem 1.5rem;}
+.sec-in{max-width:960px;margin:0 auto;}
+.bg-white{background:var(--white);}
+.bg-sky{background:var(--sk50);}
+.bg-grad{background:linear-gradient(160deg,var(--sk50) 0%,var(--b50) 100%);}
+.tag{
+  display:inline-block;background:var(--b50);color:var(--b700);
+  font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  padding:5px 15px;border-radius:50px;margin-bottom:.75rem;
+  border:1px solid var(--b100);
+}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,34px);color:var(--b900);margin-bottom:.5rem;line-height:1.25;}
+.sec-sub{font-size:16px;color:var(--g600);max-width:560px;margin-bottom:2.5rem;line-height:1.75;}
+
+/* ── SERVICES ─────────────────────────────────────── */
+.srv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
+.srv-card{
+  background:var(--g50);
+  border:1.5px solid var(--b100);
+  border-radius:var(--rl);padding:1.75rem 1.5rem;
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+  position:relative;overflow:hidden;
+}
+.srv-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3.5px;
+  background:linear-gradient(90deg,var(--b500),var(--tc));
+  opacity:0;transition:opacity .2s;
+}
+.srv-card:hover{transform:translateY(-5px);box-shadow:var(--shm);border-color:var(--b200);}
+.srv-card:hover::before{opacity:1;}
+.srv-ico{
+  width:54px;height:54px;background:var(--b50);
+  border-radius:15px;display:flex;align-items:center;justify-content:center;
+  margin-bottom:1rem;font-size:26px;border:1.5px solid var(--b100);
+}
+.srv-card h3{font-size:16px;font-weight:800;color:var(--b900);margin-bottom:.4rem;}
+.srv-card p{font-size:14px;color:var(--g600);line-height:1.65;}
+
+/* ── GALLERY ──────────────────────────────────────── */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.gal-item{border-radius:var(--rm);overflow:hidden;aspect-ratio:4/3;position:relative;box-shadow:var(--sh);}
+.gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s;}
+.gal-item:hover img{transform:scale(1.06);}
+.gal-ov{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,77,140,.45) 0%,transparent 60%);
+  opacity:0;transition:opacity .3s;
+}
+.gal-item:hover .gal-ov{opacity:1;}
+@media(max-width:540px){.gal-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ── REVIEWS ──────────────────────────────────────── */
+.rat-sum{
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+  background:var(--b50);border:1.5px solid var(--b100);
+  border-radius:var(--rl);padding:1.5rem 2rem;margin-bottom:2rem;
+}
+.rat-n{font-family:'Playfair Display',serif;font-size:54px;color:var(--b700);line-height:1;}
+.rat-stars{font-size:22px;color:#F59E0B;margin-bottom:5px;}
+.rat-info p{font-size:14px;color:var(--g600);}
+.rat-info p+p{font-size:12px;color:var(--g400);margin-top:3px;}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:16px;}
+.rev-card{
+  background:var(--white);border:1.5px solid var(--g200);
+  border-radius:var(--rm);padding:1.4rem;
+  transition:box-shadow .2s,border-color .2s;
+}
+.rev-card:hover{box-shadow:var(--sh);border-color:var(--b100);}
+.rev-hd{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0;}
+.rev-name{font-size:14px;font-weight:800;color:var(--g800);}
+.rev-place{font-size:12px;color:var(--g400);}
+.rev-stars{color:#F59E0B;font-size:13px;margin-bottom:8px;}
+.rev-text{font-size:14px;color:var(--g600);line-height:1.65;font-style:italic;}
+.rev-date{font-size:11px;color:var(--g400);margin-top:10px;}
+
+/* ── CONTACT ──────────────────────────────────────── */
+.cnt-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:start;}
+@media(max-width:720px){.cnt-grid{grid-template-columns:1fr;}}
+.cnt-card,.inf-card{
+  background:var(--white);border:1.5px solid var(--b100);
+  border-radius:var(--rl);padding:2rem;box-shadow:var(--sh);
+}
+.cnt-title{font-family:'Playfair Display',serif;font-size:22px;color:var(--b900);margin-bottom:1.5rem;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:480px){.frow{grid-template-columns:1fr;}}
+.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.fg label{font-size:13px;font-weight:800;color:var(--g600);}
+.fg input,.fg select,.fg textarea{
+  font-size:14px;font-family:'Nunito',sans-serif;
+  padding:11px 14px;border:1.5px solid var(--g200);
+  border-radius:var(--r);color:var(--g800);
+  background:var(--g50);transition:border-color .2s,box-shadow .2s;outline:none;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  border-color:var(--b500);box-shadow:0 0 0 3px rgba(26,127,212,.12);background:#fff;
+}
+.fg textarea{resize:vertical;min-height:90px;}
+.btn-sub{
+  width:100%;background:var(--b700);color:#fff;border:none;
+  padding:15px;border-radius:50px;
+  font-size:16px;font-weight:800;font-family:'Nunito',sans-serif;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;
+  transition:background .2s,transform .15s;
+  box-shadow:0 4px 18px rgba(10,77,140,.22);margin-top:4px;
+}
+.btn-sub:hover{background:var(--b900);transform:translateY(-2px);}
+.inf-title{font-family:'Playfair Display',serif;font-size:20px;color:var(--b900);margin-bottom:1.25rem;}
+.ii{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--g100);}
+.ii:last-of-type{border-bottom:none;}
+.ii-ico{width:40px;height:40px;background:var(--b50);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid var(--b100);}
+.ii-label{font-size:14px;font-weight:800;color:var(--g800);}
+.ii-sub{font-size:12px;color:var(--g400);margin-top:2px;}
+.soc-row{display:flex;gap:10px;margin-top:1.25rem;}
+.soc-btn{
+  flex:1;text-align:center;padding:11px;
+  border-radius:var(--r);font-size:13px;font-weight:800;
+  text-decoration:none;transition:transform .15s,box-shadow .15s;
+}
+.soc-btn:hover{transform:translateY(-2px);box-shadow:var(--sh);}
+.soc-ig{background:var(--b50);color:var(--b700);border:1.5px solid var(--b100);}
+.soc-fb{background:#EBF0FF;color:#2B4DB8;border:1.5px solid #C5D3F7;}
+.wa-dir{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--wa);color:#fff;
+  padding:14px;border-radius:var(--r);text-decoration:none;
+  font-weight:800;font-size:15px;margin-top:1.5rem;
+  transition:background .2s,transform .15s;
+  box-shadow:0 4px 16px rgba(37,211,102,.3);
+}
+.wa-dir:hover{background:var(--wa2);transform:translateY(-2px);}
+
+/* ── FOOTER ───────────────────────────────────────── */
+footer{
+  background:var(--b900);color:rgba(255,255,255,.7);
+  padding:2.5rem 1.5rem;text-align:center;
+}
+.ft-brand{font-family:'Playfair Display',serif;font-size:22px;color:#fff;margin-bottom:.4rem;}
+.ft-links{display:flex;justify-content:center;gap:22px;margin:1rem 0;}
+.ft-links a{color:rgba(255,255,255,.55);font-size:13px;font-weight:700;text-decoration:none;transition:color .2s;}
+.ft-links a:hover{color:#fff;}
+footer p{font-size:13px;}
+
+/* ── WA FLOAT ─────────────────────────────────────── */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:999;
+  background:var(--wa);color:#fff;
+  width:62px;height:62px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 24px rgba(37,211,102,.5);
+  text-decoration:none;
+  animation:wapulse 2.5s infinite;
+  transition:transform .2s;
+}
+.wa-float:hover{transform:scale(1.12);animation:none;box-shadow:0 8px 32px rgba(37,211,102,.65);}
+.wa-float svg{width:30px;height:30px;}
+@keyframes wapulse{
+  0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.5);}
+  50%{box-shadow:0 6px 36px rgba(37,211,102,.75);}
+}
+
+/* ── ANIMATIONS ───────────────────────────────────── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.fu{animation:fadeUp .65s ease both;}
+.d1{animation-delay:.1s;}.d2{animation-delay:.2s;}.d3{animation-delay:.3s;}.d4{animation-delay:.4s;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-icon" style="background:white;padding:2px;"><img src="data:image/jpeg;base64,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" alt="Clean Services H&L Logo" style="width:40px;height:40px;object-fit:contain;border-radius:10px;"/></div>
+    <div class="nav-name">Clean Services H&amp;L <small>Limpieza Profesional · Santiago</small></div>
+  </a>
+  <div class="nav-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#galeria">Galería</a>
+    <a href="#reviews">Opiniones</a>
+    <a href="#agendar">Agendar</a>
+    <a href="https://wa.me/56961903008?text=Hola%20Clean%20Services%20H%26L!%20Me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20sus%20servicios." target="_blank" class="nav-wa">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hc hc1"></div>
+  <div class="hc hc2"></div>
+  <div class="hc hc3"></div>
+  
+  <div style="margin-bottom:1.5rem;position:relative;z-index:1;">
+    <img src="data:image/jpeg;base64,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" alt="Clean Services H&L" style="width:110px;height:110px;object-fit:contain;border-radius:50%;background:white;padding:8px;box-shadow:0 6px 24px rgba(0,0,0,.2);"/>
+  </div>
+  <div class="hero-badge fu">⭐&nbsp;&nbsp;+200 clientes satisfechos · Santiago, Chile</div>
+  <h1 class="fu d1">Limpieza Profesional<br><span>a Domicilio</span></h1>
+  <p class="hero-sub fu d2">Tapicería, sofás, futones, alfombras, decapado de pisos y más. Resultados que se ven desde el primer servicio.</p>
+  <div class="hero-btns fu d3">
+    <a href="https://wa.me/56961903008?text=Hola%20Clean%20Services%20H%26L!%20Me%20gustar%C3%ADa%20agendar%20una%20cita%20y%20consultar%20sobre%20sus%20servicios%20de%20limpieza." target="_blank" class="btn-wa">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Contactar por WhatsApp
+    </a>
+    <a href="#agendar" class="btn-ghost">Agendar una cita</a>
+  </div>
+  <div class="hero-stats fu d4">
+    <div class="stat"><div class="stat-n">+200</div><div class="stat-l">Clientes felices</div></div>
+    <div class="stat"><div class="stat-n">4.9 ★</div><div class="stat-l">Calificación promedio</div></div>
+    <div class="stat"><div class="stat-n">6+</div><div class="stat-l">Servicios disponibles</div></div>
+    <div class="stat"><div class="stat-n">100%</div><div class="stat-l">A domicilio</div></div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0,35 C360,70 1080,0 1440,35 L1440,55 L0,55 Z" fill="#FFFFFF"/>
+</svg>
+
+<!-- SERVICES -->
+<section class="sec bg-white" id="servicios">
+  <div class="sec-in">
+    <div class="tag">Nuestros servicios</div>
+    <h2 class="sec-title">Todo lo que necesitas<br>para un hogar impecable</h2>
+    <p class="sec-sub">Trabajamos con equipos de vapor a presión y productos de primera calidad. Servicio a domicilio en toda la Región Metropolitana.</p>
+    <div class="srv-grid">
+      <div class="srv-card">
+        <div class="srv-ico">🛋️</div>
+        <h3>Tapicería y Sofás</h3>
+        <p>Limpieza profunda de sofás, sillones y muebles tapizados con vapor a presión. Eliminación de manchas, bacterias y malos olores.</p>
+      </div>
+      <div class="srv-card">
+        <div class="srv-ico">🛏️</div>
+        <h3>Futones y Colchones</h3>
+        <p>Desinfección y eliminación de ácaros, manchas y humedad. Un descanso más sano para toda tu familia.</p>
+      </div>
+      <div class="srv-card">
+        <div class="srv-ico">🏠</div>
+        <h3>Alfombras</h3>
+        <p>Lavado y secado profesional de alfombras de todos los tamaños y tipos de fibra, con productos de calidad premium.</p>
+      </div>
+      <div class="srv-card">
+        <div class="srv-ico">✨</div>
+        <h3>Decapado de Pisos</h3>
+        <p>Restauración y brillado de pisos de madera, cerámicos y vinílicos. Dejamos tus pisos como el primer día.</p>
+      </div>
+      <div class="srv-card">
+        <div class="srv-ico">🚗</div>
+        <h3>Interior de Autos</h3>
+        <p>Limpieza completa del interior de tu vehículo: tapices, alfombrillas, techos y paneles. Resultado de concesionaria.</p>
+      </div>
+      <div class="srv-card">
+        <div class="srv-ico">🔧</div>
+        <h3>Mantenciones Menores</h3>
+        <p>Electricidad y pequeñas mantenciones del hogar. Soluciones rápidas, seguras y con garantía.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec bg-sky" id="galeria">
+  <div class="sec-in">
+    <div class="tag">Galería de trabajos</div>
+    <h2 class="sec-title">Resultados reales,<br>clientes reales</h2>
+    <p class="sec-sub">Trabajos realizados en Santiago y sus comunas. Antes y después que hablan por sí solos.</p>
+    <div class="gal-grid">
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=450&fit=crop" alt="Limpieza de sofá profesional" loading="lazy"/>
+        <div class="gal-ov"></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=450&fit=crop" alt="Servicio limpieza domicilio" loading="lazy"/>
+        <div class="gal-ov"></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=450&fit=crop" alt="Limpieza de alfombra" loading="lazy"/>
+        <div class="gal-ov"></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&h=450&fit=crop" alt="Vapor profesional limpieza" loading="lazy"/>
+        <div class="gal-ov"></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&h=450&fit=crop" alt="Interior hogar limpio" loading="lazy"/>
+        <div class="gal-ov"></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&h=450&fit=crop" alt="Limpieza interior auto" loading="lazy"/>
+        <div class="gal-ov"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec bg-white" id="reviews">
+  <div class="sec-in">
+    <div class="tag">Opiniones de clientes</div>
+    <h2 class="sec-title">Lo que dicen quienes<br>ya confían en nosotros</h2>
+    <div class="rat-sum">
+      <div class="rat-n">4.9</div>
+      <div class="rat-info">
+        <div class="rat-stars">★★★★★</div>
+        <p>Basado en +85 opiniones verificadas</p>
+        <p>Santiago · La Florida y comunas cercanas</p>
+      </div>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="rev-hd">
+          <div class="av" style="background:#EFF7FF;color:#1A7FD4;">MG</div>
+          <div><div class="rev-name">María González</div><div class="rev-place">La Florida</div></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-text">"Quedé impresionada con el resultado del sofá. Tenía manchas de años y quedó como nuevo. Vinieron puntuales y fueron muy prolijos. Los recomiendo 100%."</div>
+        <div class="rev-date">Hace 2 semanas</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-hd">
+          <div class="av" style="background:#EAF3DE;color:#3B6D11;">CR</div>
+          <div><div class="rev-name">Carlos Riquelme</div><div class="rev-place">Ñuñoa</div></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-text">"Contraté el servicio para el interior de mi auto y quedó espectacular. El precio muy razonable y el trabajo de calidad. Sin duda vuelvo a llamarlos."</div>
+        <div class="rev-date">Hace 1 mes</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-hd">
+          <div class="av" style="background:#FFF0F5;color:#993556;">AP</div>
+          <div><div class="rev-name">Andrea Pérez</div><div class="rev-place">Puente Alto</div></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-text">"El decapado de mis pisos quedó increíble. Muy profesionales y respetuosos del espacio. Se notó la diferencia al tiro. Ya los tengo agendados para el próximo mes."</div>
+        <div class="rev-date">Hace 3 semanas</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-hd">
+          <div class="av" style="background:#FFF8EC;color:#854F0B;">JM</div>
+          <div><div class="rev-name">Jorge Martínez</div><div class="rev-place">San Bernardo</div></div>
+        </div>
+        <div class="rev-stars">★★★★☆</div>
+        <div class="rev-text">"Muy buen servicio de limpieza de alfombras. Llegaron a la hora acordada. Las alfombras quedaron limpias y sin olor. Totalmente recomendados."</div>
+        <div class="rev-date">Hace 5 días</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-hd">
+          <div class="av" style="background:#E1F5EE;color:#0F6E56;">VS</div>
+          <div><div class="rev-name">Valeria Soto</div><div class="rev-place">Macul</div></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-text">"Limpieza profunda de colchón y futón. No podía creer la diferencia. Super recomendados para familias con niños y mascotas. Excelente atención."</div>
+        <div class="rev-date">Hace 2 meses</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-hd">
+          <div class="av" style="background:#EEEDFE;color:#534AB7;">PL</div>
+          <div><div class="rev-name">Patricia López</div><div class="rev-place">La Florida</div></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-text">"Servicio de mantención eléctrica rápido y sin complicaciones. Vinieron al día siguiente de llamarlos. Muy buen precio y trabajo impecable."</div>
+        <div class="rev-date">Hace 1 semana</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec bg-grad" id="agendar">
+  <div class="sec-in">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <div class="tag">Contacto y reservas</div>
+      <h2 class="sec-title" style="max-width:480px;margin:.5rem auto;">Agenda tu servicio hoy mismo</h2>
+      <p class="sec-sub" style="margin:0 auto;">Rellena el formulario y te contactamos por WhatsApp con todos los detalles.</p>
+    </div>
+    <div class="cnt-grid">
+      <!-- FORM -->
+      <div class="cnt-card">
+        <div class="cnt-title">Solicitar una cita</div>
+        <div class="frow">
+          <div class="fg">
+            <label>Nombre</label>
+            <input type="text" id="fname" placeholder="Tu nombre completo"/>
+          </div>
+          <div class="fg">
+            <label>Teléfono</label>
+            <input type="tel" id="fphone" placeholder="+56 9 6190 3008"/>
+          </div>
+        </div>
+        <div class="fg">
+          <label>Servicio que necesitas</label>
+          <select id="fservice">
+            <option value="">Selecciona un servicio...</option>
+            <option>Limpieza de tapicería / sofás</option>
+            <option>Limpieza de futones / colchones</option>
+            <option>Limpieza de alfombras</option>
+            <option>Decapado de pisos</option>
+            <option>Limpieza interior de auto</option>
+            <option>Mantención menor / electricidad</option>
+            <option>Varios servicios</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Fecha preferida</label>
+          <input type="date" id="fdate"/>
+        </div>
+        <div class="fg">
+          <label>Mensaje adicional (opcional)</label>
+          <textarea id="fmsg" placeholder="Cuéntanos más sobre lo que necesitas..."></textarea>
+        </div>
+        <button class="btn-sub" onclick="sendToWA()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enviar solicitud por WhatsApp
+        </button>
+      </div>
+      <!-- INFO -->
+      <div class="inf-card">
+        <div class="inf-title">Información de contacto</div>
+        <div class="ii">
+          <div class="ii-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#1A7FD4"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div><div class="ii-label">+56 9 6190 3008</div><div class="ii-sub">WhatsApp y llamadas</div></div>
+        </div>
+        <div class="ii">
+          <div class="ii-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A7FD4" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div><div class="ii-label">La Florida, Santiago</div><div class="ii-sub">Servicio a domicilio en toda la RM</div></div>
+        </div>
+        <div class="ii">
+          <div class="ii-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A7FD4" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          </div>
+          <div><div class="ii-label">Lun – Sáb · 8:00 – 19:00</div><div class="ii-sub">Horario de atención</div></div>
+        </div>
+        <div class="ii">
+          <div class="ii-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A7FD4" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div><div class="ii-label">@cleanserviceshl</div><div class="ii-sub">Instagram · Facebook</div></div>
+        </div>
+        <a href="https://wa.me/56961903008?text=Hola%20Clean%20Services%20H%26L!%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20consultar%20sobre%20sus%20servicios." target="_blank" class="wa-dir">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escribir ahora · +56 9 6190 3008
+        </a>
+        <div class="soc-row">
+          <a href="https://instagram.com/cleanserviceshl" target="_blank" class="soc-btn soc-ig">📷 Instagram</a>
+          <a href="https://facebook.com/CleanServicesHL" target="_blank" class="soc-btn soc-fb">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-brand">Clean Services H&amp;L</div>
+  <div class="ft-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#galeria">Galería</a>
+    <a href="#reviews">Opiniones</a>
+    <a href="#agendar">Contacto</a>
+  </div>
+  <p>La Florida, Santiago, Chile &nbsp;·&nbsp; +56 9 6190 3008</p>
+  <p style="margin-top:8px;font-size:12px;opacity:.45;">© 2026 Clean Services H&amp;L · Todos los derechos reservados</p>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/56961903008?text=Hola%20Clean%20Services%20H%26L!%20Vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20consultar%20sobre%20sus%20servicios." target="_blank" class="wa-float" title="Chatear por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+function sendToWA(){
+  var name=document.getElementById('fname').value.trim();
+  var phone=document.getElementById('fphone').value.trim();
+  var service=document.getElementById('fservice').value;
+  var date=document.getElementById('fdate').value;
+  var msg=document.getElementById('fmsg').value.trim();
+  var text='Hola Clean Services H&L! Me gustaría agendar una cita.';
+  if(name) text+='\n\n*Nombre:* '+name;
+  if(phone) text+='\n*Teléfono:* '+phone;
+  if(service) text+='\n*Servicio:* '+service;
+  if(date){
+    var d=new Date(date+'T12:00:00');
+    text+='\n*Fecha preferida:* '+d.toLocaleDateString('es-CL',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  }
+  if(msg) text+='\n*Mensaje:* '+msg;
+  window.open('https://wa.me/56961903008?text='+encodeURIComponent(text),'_blank');
+}
+</script>
+</body>
+</html>
