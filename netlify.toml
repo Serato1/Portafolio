@@ -1,0 +1,64 @@
+# ============================================================
+# NETLIFY.TOML — Configuración de seguridad y rendimiento
+# Coloca este archivo en la RAÍZ de tu repositorio GitHub
+# ============================================================
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Seguridad: evita que tu web sea cargada en iframes de otros sitios
+    X-Frame-Options = "SAMEORIGIN"
+    # Seguridad: el navegador no adivina el tipo de archivo
+    X-Content-Type-Options = "nosniff"
+    # Seguridad: controla qué información se envía al hacer clic en links externos
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Seguridad: desactiva funciones del navegador que no necesitas
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    # Seguridad: fuerza HTTPS y recuerda al navegador por 1 año
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # Seguridad: bloquea XSS en navegadores antiguos
+    X-XSS-Protection = "1; mode=block"
+    # Rendimiento: caché para HTML (sin caché, siempre fresco)
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    # Rendimiento: caché de CSS por 1 año
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    # Rendimiento: caché de JS por 1 año
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ============================================================
+# REDIRECCIONAMIENTO: fuerza www sin www a la URL principal
+# ============================================================
+[[redirects]]
+  from = "https://www.jesuslinares.netlify.app/*"
+  to = "https://jesuslinares.netlify.app/:splat"
+  status = 301
+  force = true
+
+# Página 404 personalizada (opcional — crea un 404.html si quieres)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
